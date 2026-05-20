@@ -5,3 +5,19 @@
 .container-header h1 span{
    color: #1e5c96;
 }
+
+/*************BUTTON***************/
+
+.btn{
+   width: 40%;
+   border: none;
+   padding: 14px 28px;
+   font-size: 20px;
+   cursor: pointer;
+   background-color: #1e5c96 !important;
+}
+ .btn:hover{
+    background-color:#ddd !important;
+   color:#333 !important;
+   transition: 0.2s ease;
+ }
