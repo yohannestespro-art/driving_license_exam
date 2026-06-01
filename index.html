@@ -1,45 +1,93 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JohnTutor - DriverExam</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="./asset/css/main_style.css">
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
- </head>
- <body>
-   <div class="container m-5">
-      <div class="container-header py-5 text-center">
-         <h1 class="fw-bold">
-            <span>
-               <i class="fa-solid fa-car"></i> የመኪና
-               
-             </span> መንጃ  ፈቃድ ፈተና
-         </h1>
-      </div>
-      <div class="content bg-body-secondary p-5 m-5">
-         <p>ወደ መኪና መንጃ ፈቃድ እንኳን በደህና መጡ። ፈተናውን ከመውሰዶ በፊት የሚከተሉትን መረጃዎች ያስገቡ።
-            <ol>
-               <li>ሙሉ ስም (Fll Name)</li>
-               <li>ጾታ(Gender)</li>
-               <li>እድሜ (Age)</li>
-               <li>የትውልድ ሃገር (Nationality)</li>
-            </ol>
-         </p>
-      </div>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>የመንጃ ፈቃድ ፈተና</title>
+	<link rel="stylesheet" type="text/css" href="asset/css/main_style.css">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+	<div class="container">
+		<div class="container-header">
+			<h1> 
+				<span>
+					<i class="fa fa-car" aria-hidden="true"></i>
+					የመኪና
+				</span> 
+				መንጃ ፈቃድ ፈተና
+			</h1>
+		</div>
 
-      <div class="text-center">
+		<div class="content" id="question_header">
+			<p>ወደመኪና መንጃ ፈቃድ ፈተና እንኳን በደህና መጡ። ፈተናውን ከመውሰድዎ በፊት የሚከተሉትን መረጃዎች ያስገቡ።</p>
 
-         <button id="myBtn" class="btn text-light bg-dark">
-            መረጃውን ያስገቡ <i class="fa-solid fa-arrow-right"></i> 
-          </button>
-      </div>
-   </div>
-   <script src="asset/js/main_script.js">
-      console.log("hey");
-   </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
- </body>
- </html>
+			<ol>
+				<li>ሙሉ ስም (full name)</li>
+				<li>ጾታ (gender)</li>
+				<li>እድሜ (age)</li>
+				<li>የትውልድ ሃገር (nationality)</li>
+			</ol>
+
+		</div>
+
+		<button id="myBtn" class="btn">መረጃውን ያስገቡ <i class="fas fa-arrow-right"></i></button>
+	</div>
+
+	<!-- modal -->
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<span class="close">&times;</span>
+				<h2>መረጃውን ያስገቡ</h2>
+			</div>
+
+			<div class="modal-body">
+				<form>
+					<div id="form_div">
+						<div id="form_left">
+							ሙሉ ስም (full name)<br>
+							ጾታ (gender)<br>
+							እድሜ (age)<br>
+							የትውልድ ሃገር (nationality)<br>
+						</div>
+
+						<div id="form_right">
+							<input type="text" id="name" placeholder="ሙሉ ስም ...">
+
+							<select id="gender">ጾታ
+								<option value=""></option>
+								<option value="ወንድ">ወንድ</option>
+								<option value="ሴት">ሴት</option>
+							</select>
+
+							
+							<div class="slide_container">
+								<input type="range" id="age" min="16" max="75" value="24" class="slider">
+								<span id="ageRange"></span>
+							</div>
+
+							<input type="text" id="nationality" placeholder="የትውልድ ሃገር ...">
+						</div>
+
+						<button class="btn" onclick="sendStudentInfo(event)">መረጃውን ያስገቡ</button>
+					</div>
+				</form>
+			</div>
+
+			<div class="modal-footer">
+				<p>ወደመኪና መንጃ ፈቃድ ፈተና እንኳን በደህና መጡ። ፈተናውን ከመውሰድዎ በፊት የሚከተሉትን መረጃዎች ያስገቡ።</p>
+			</div>
+		</div>
+	</div>
+
+	<script src="asset/js/main_script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
